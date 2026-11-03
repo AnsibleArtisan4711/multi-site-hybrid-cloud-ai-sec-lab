@@ -1,0 +1,15 @@
+# Betriebssystem / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Niemals committen
+.env
+*.pem
+*.key
+*.pfx
+*.kdbx
+secrets*
+credentials*
+*.log
