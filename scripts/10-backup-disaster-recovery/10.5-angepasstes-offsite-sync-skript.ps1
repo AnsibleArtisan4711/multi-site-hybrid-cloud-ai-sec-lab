@@ -6,5 +6,7 @@ $RcloneExe = "C:\rclone\rclone.exe"
 $SourcePath = "A:\VeeamBackups\COPY-To-Secondary-Encrypted\"
 $RemotePath = "GDrive:Veeam_Offsite_Backup"
 
-# Sync starten
-& $RcloneExe sync $SourcePath $RemotePath --transfers 4 --checkers 8 --verbose --log-file "C:\Logs\rclone_sync.log"
+# Archivordner mit Datum fuer lokal geloeschte oder geaenderte Dateien
+$ArchivePath = "GDrive:Veeam_Offsite_Archiv/" + (Get-Date -Format "yyyy-MM-dd")
+# Sync starten (lokal geloeschte oder geaenderte Dateien werden in den Archivordner verschoben)
+& $RcloneExe sync $SourcePath $RemotePath --backup-dir $ArchivePath --transfers 4 --checkers 8 --verbose --log-file "C:\Logs\rclone_sync.log"

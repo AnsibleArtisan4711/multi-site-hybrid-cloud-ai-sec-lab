@@ -5,5 +5,7 @@ $RcloneExe = "C:\rclone\rclone.exe"
 # Welche Backups sollen in die Cloud? (Pfade anpassen)
 $SourcePath = "B:\VeeamBackups\"
 $RemotePath = "GDrive:Veeam_Offsite_Backup"
-# Startet den Sync. Löscht Dateien in der Cloud, wenn sie lokal (Retention) geloescht wurden.
-& $RcloneExe sync $SourcePath $RemotePath --transfers 4 --checkers 8 --verbose --log-file "C:\Logs\rclone_sync.log"
+# Archivordner mit Datum fuer lokal geloeschte oder geaenderte Dateien
+$ArchivePath = "GDrive:Veeam_Offsite_Archiv/" + (Get-Date -Format "yyyy-MM-dd")
+# Startet den Sync. Lokal geloeschte oder geaenderte Dateien werden in den Archivordner verschoben und nicht in der Cloud geloescht.
+& $RcloneExe sync $SourcePath $RemotePath --backup-dir $ArchivePath --transfers 4 --checkers 8 --verbose --log-file "C:\Logs\rclone_sync.log"
