@@ -113,7 +113,7 @@ WAC kann als Desktop-App (auf Win 11) oder als **Gateway** (auf einem Server) in
 2. Rufen Sie `https://SRV-FS-01.ad.example.com` auf.
 3. Authentifizieren Sie sich. Im WAC können Sie nun alle Server Ihrer Domäne (`SRV-DC-01`, `SRV-DC-02`) hinzufügen.
 
-1. **Vorteile:** Sie können von hier aus Updates einspielen, Firewall-Regeln prüfen, PowerShell-Skripte im Browser ausführen und sogar Hyper-V VMs komplett verwalten, ohne jemals RDP nutzen zu müssen.
+4. **Vorteile:** Sie können von hier aus Updates einspielen, Firewall-Regeln prüfen, PowerShell-Skripte im Browser ausführen und sogar Hyper-V VMs komplett verwalten, ohne jemals RDP nutzen zu müssen.
 
 ## \4. Remote Desktop Protocol (RDP)
 
